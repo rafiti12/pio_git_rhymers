@@ -6,6 +6,10 @@ package edu.kis.vh.nursery.list;
 
 public class IntLinkedList {
 
+	public static final Node EMPTY = null;
+	public static final int IF_EMPTY = -1;
+	public static final boolean NO_FULL = false;
+	
 	private Node last;
 	private int index;
 
@@ -29,7 +33,7 @@ public class IntLinkedList {
 	 * @return true jeśli lista jest pusta, false w przeciwnym wypadku
 	 */
 	public boolean isEmpty() {
-		return last == null;
+		return last == EMPTY;
 	}
 
 	// TODO: uzupełnić metodę
@@ -38,7 +42,7 @@ public class IntLinkedList {
 	 * @return true jeśli lista jest pusta, false w przeciwnym wypadku
 	 */
 	public boolean isFull() {
-		return false;
+		return NO_FULL;
 	}
 
 	/**
@@ -47,7 +51,7 @@ public class IntLinkedList {
 	 */
 	public int top() {
 		if (isEmpty())
-			return -1;
+			return IF_EMPTY;
 		return last.getValue();
 	}
 
