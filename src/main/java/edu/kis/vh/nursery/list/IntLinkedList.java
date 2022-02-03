@@ -8,10 +8,9 @@ public class IntLinkedList {
 
 	public static final Node EMPTY = null;
 	public static final int IF_EMPTY = -1;
-	public static final boolean NO_FULL = false;
+	public static final boolean NOT_FULL = false;
 	
 	private Node last;
-	private int index;
 
 	/**
 	 * Dodanie nowego elemntu do klasy Node
@@ -42,7 +41,7 @@ public class IntLinkedList {
 	 * @return true jeśli lista jest pusta, false w przeciwnym wypadku
 	 */
 	public boolean isFull() {
-		return NO_FULL;
+		return NOT_FULL;
 	}
 
 	/**

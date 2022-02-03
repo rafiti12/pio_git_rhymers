@@ -3,13 +3,12 @@ package edu.kis.vh.nursery;
 public class IntArrayStack {
 
     public static final int NUMBERS_ARRAY_SIZE = 12;
-    public static final int INITIAL = -1;
-    public static final int RETURN = -1;
+    public static final int empty = -1;
 
 
     private final int[] numbers = new int[NUMBERS_ARRAY_SIZE];
 
-    private int total = INITIAL;
+    private int total = empty;
 
     public int getTotal() {
         return total;
@@ -21,7 +20,7 @@ public class IntArrayStack {
     }
 
     public boolean callCheck() {
-        return total == INITIAL;
+        return total == empty;
     }
 
     public boolean isFull() {
@@ -30,13 +29,13 @@ public class IntArrayStack {
 
     protected int peekaboo() {
         if (callCheck())
-            return RETURN;
+            return -1;
         return numbers[total];
     }
 
     public int countOut() {
         if (callCheck())
-            return RETURN;
+            return -1;
         return numbers[total--];
     }
 
