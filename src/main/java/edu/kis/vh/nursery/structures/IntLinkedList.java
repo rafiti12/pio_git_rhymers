@@ -1,16 +1,20 @@
-package edu.kis.vh.nursery.list;
+package edu.kis.vh.nursery.structures;
 
 /**
  * Klasa robiąca za listę dwukierunkową z obiektami klasy Node
  */
 
-public class IntLinkedList {
+public class IntLinkedList implements IntStructureInterface {
 
 	public static final Node EMPTY = null;
-	public static final int IF_EMPTY = -1;
 	public static final boolean NOT_FULL = false;
-	
 	private Node last;
+
+	public IntLinkedList(){};
+
+	public IntLinkedList(Node last) {
+		this.last = last;
+	}
 
 	/**
 	 * Dodanie nowego elemntu do klasy Node
@@ -50,7 +54,7 @@ public class IntLinkedList {
 	 */
 	public int top() {
 		if (isEmpty())
-			return IF_EMPTY;
+			return -1;
 		return last.getValue();
 	}
 

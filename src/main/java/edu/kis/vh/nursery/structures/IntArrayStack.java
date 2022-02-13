@@ -1,40 +1,42 @@
-package edu.kis.vh.nursery;
+package edu.kis.vh.nursery.structures;
 
-public class IntArrayStack {
+public class IntArrayStack implements IntStructureInterface {
 
     public static final int NUMBERS_ARRAY_SIZE = 12;
-    public static final int empty = -1;
-
-
     private final int[] numbers = new int[NUMBERS_ARRAY_SIZE];
+    private int total = IF_EMPTY;
 
-    private int total = empty;
+    public IntArrayStack(){};
+
+    public IntArrayStack(int total) {
+        this.total = total;
+    }
 
     public int getTotal() {
         return total;
     }
 
-    public void countIn(int in) {
+    public void push(int in) {
         if (!isFull())
             numbers[++total] = in;
     }
 
-    public boolean callCheck() {
-        return total == empty;
+    public boolean isEmpty() {
+        return total == IF_EMPTY;
     }
 
     public boolean isFull() {
         return total == NUMBERS_ARRAY_SIZE - 1;
     }
 
-    protected int peekaboo() {
-        if (callCheck())
+    public int top() {
+        if (isEmpty())
             return -1;
         return numbers[total];
     }
 
-    public int countOut() {
-        if (callCheck())
+    public int pop() {
+        if (isEmpty())
             return -1;
         return numbers[total--];
     }

@@ -1,7 +1,9 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.structures.IntArrayStack;
+
 public class DefaultCountingOutRhymer {
-	IntArrayStack arrStack;
+	private IntArrayStack arrStack;
 
 	public DefaultCountingOutRhymer(IntArrayStack arrStack) {
 		this.arrStack = arrStack;
@@ -16,11 +18,11 @@ public class DefaultCountingOutRhymer {
 	}
 
 	public void countIn(int in) {
-		arrStack.countIn(in);
+		arrStack.push(in);
 	}
 
 	public boolean callCheck() {
-		return arrStack.callCheck();
+		return arrStack.isEmpty();
 	}
 
 	public boolean isFull() {
@@ -28,10 +30,10 @@ public class DefaultCountingOutRhymer {
 	}
 
 	public int peekaboo() {
-		return arrStack.peekaboo();
+		return arrStack.top();
 	}
 
 	public int countOut() {
-		return arrStack.countOut();
+		return arrStack.pop();
 	}
 }
