@@ -1,9 +1,10 @@
 package edu.kis.vh.nursery;
 
 import edu.kis.vh.nursery.structures.IntArrayStack;
+import edu.kis.vh.nursery.structures.IntStructureInterface;
 
 public class DefaultCountingOutRhymer {
-	private IntArrayStack arrStack;
+	private IntStructureInterface arrStack;
 
 	public DefaultCountingOutRhymer(IntArrayStack arrStack) {
 		this.arrStack = arrStack;

@@ -31,13 +31,13 @@ public class IntArrayStack implements IntStructureInterface {
 
     public int top() {
         if (isEmpty())
-            return -1;
+            return EMPTY_STRUCTURE_VALUE;
         return numbers[total];
     }
 
     public int pop() {
         if (isEmpty())
-            return -1;
+            return EMPTY_STRUCTURE_VALUE;
         return numbers[total--];
     }
 

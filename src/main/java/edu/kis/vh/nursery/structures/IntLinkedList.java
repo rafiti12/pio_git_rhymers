@@ -54,7 +54,7 @@ public class IntLinkedList implements IntStructureInterface {
 	 */
 	public int top() {
 		if (isEmpty())
-			return -1;
+			return EMPTY_STRUCTURE_VALUE;
 		return last.getValue();
 	}
 
@@ -64,10 +64,17 @@ public class IntLinkedList implements IntStructureInterface {
 	 */
 	public int pop() {
 		if (isEmpty())
-			return -1;
+			return EMPTY_STRUCTURE_VALUE;
 		int ret = last.getValue();
 		last = last.getPrev();
 		return ret;
 	}
+
+
+	/**
+	 * zwraca ilość elementów - do uzupełnienia
+	 * @return ilość elementów
+	 */
+	public int getTotal() {return 0;}
 
 }
